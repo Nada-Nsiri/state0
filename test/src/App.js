@@ -10,7 +10,8 @@ class App extends React.Component{
             bio:"ma biographie" ,
              imgSrc:{image},
             profession:"étudiante",
-            show:true
+            show:true,
+            time:0
            };
       }
 
@@ -19,13 +20,19 @@ this.setState(state => ({
         show: !state.show 
       }),()=>console.log(this.state.show)
         )
-
 }
-componentDidMount() {
-  setInterval(() => {
-    console.log (new Date ())
-    },100000000000);
-} 
+
+componentDidMount (){
+
+  setInterval(() => { 
+    this.setState(state => ({
+     time : this.state.time+1 
+    }))
+    
+  },1000);
+  
+  }
+
 
 render()
 {
@@ -39,6 +46,7 @@ cliquer ici
 <h1>{this.state.show ? this.state.bio :""}</h1>
 <h1>{this.state.show ? this.state.profession :""}</h1>
 <div>   {this.state.show ? <img src={this.state.imgSrc}  alt='photos'/>:""}</div>
+<p>{this.state.time}</p>
 
 </div>
 )
