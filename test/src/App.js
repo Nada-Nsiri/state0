@@ -33,8 +33,9 @@ componentDidMount (){
   
   }
 
-
+  
 render()
+
 {
 
 return (
@@ -45,7 +46,7 @@ cliquer ici
 <h1>{this.state.show ? this.state.fullName :""}</h1>
 <h1>{this.state.show ? this.state.bio :""}</h1>
 <h1>{this.state.show ? this.state.profession :""}</h1>
-<div>   {this.state.show ? <img src={this.state.imgSrc}  alt='photos'/>:""}</div>
+<div>   {this.state.show ? <img src={this.state.imgSrc.image}  alt='photos'/>:""}</div>
 <p>{this.state.time}</p>
 
 </div>
